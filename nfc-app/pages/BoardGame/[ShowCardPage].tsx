@@ -103,7 +103,6 @@ export default function ShowCardPage() {
     console.log(boardGame, "boardgame");
     console.log(cards , 'cards')
 
-
 return (
     <div className="flex flex-col items-center justify-center mx-10 mt-10">
         <Search />

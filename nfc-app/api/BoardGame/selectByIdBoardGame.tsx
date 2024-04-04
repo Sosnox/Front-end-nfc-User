@@ -1,5 +1,5 @@
 
-const endpoint = 'http://210.246.215.173:8000/get_boardgame_by_id_boardgame/?id_boardgame=';
+const endpoint = 'https://api.dlst.online/get_boardgame_by_id_boardgame/?id_boardgame=';
 // const endpoint = `${process.env.endpoint}/get_boardgame_by_id_boardgame/?id_boardgame=`;
 //  const endpoint = 'http://localhost:8000/get_boardgame_by_id_boardgame/?id_boardgame=';
 interface Data {
