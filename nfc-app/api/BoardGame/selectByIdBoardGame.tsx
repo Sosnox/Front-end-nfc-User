@@ -1,7 +1,6 @@
 
 const endpoint = 'https://api.dlst.online/get_boardgame_by_id_boardgame/?id_boardgame=';
-// const endpoint = `${process.env.endpoint}/get_boardgame_by_id_boardgame/?id_boardgame=`;
-//  const endpoint = 'http://localhost:8000/get_boardgame_by_id_boardgame/?id_boardgame=';
+
 interface Data {
     id_boardgame: number,
     title_game: string,

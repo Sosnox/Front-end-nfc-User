@@ -24,10 +24,6 @@ interface BoardGame {
     count_scan_boardgame: number
 }
 
-// const NEXT_PUBLIC_URL_image = process.env.NEXT_PUBLIC_URL_image;
-const NEXT_PUBLIC_URL_image = `https://api.dlst.online/uploaded_images/`
- console.log(NEXT_PUBLIC_URL_image, "NEXT_PUBLIC_URL_image")
-
 function AddGameCard (){
     const [BoardGame, setBoardGame] = useState<BoardGame[]>([]);
 

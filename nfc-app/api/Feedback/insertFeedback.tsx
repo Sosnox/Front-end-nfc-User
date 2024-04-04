@@ -8,7 +8,7 @@ interface FeedbackData {
   checktypes: string;
 }
 
-// const endpoint = `${process.env.endpoint}/post_feedback`;
+
 const endpoint = 'https://api.dlst.online/post_feedback';
 
 const sendDataToFastAPI = async (data: FeedbackData): Promise<unknown> => {

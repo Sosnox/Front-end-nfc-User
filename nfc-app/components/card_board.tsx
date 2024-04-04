@@ -62,8 +62,6 @@ interface CardProps {
   name: string;
 }
 
-// const NEXT_PUBLIC_URL_image = 'https://api.dlst.online/uploaded_images/'
-
 export default function CardBoard( { data }: { data: Card} ) {
   const router = useRouter();
   console.log(data, "data Caaaaard")
