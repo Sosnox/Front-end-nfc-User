@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  --nav-size: 65px;
+  --nav2-color: #AE70E9;
+  --nav-color: #0B3473;
+  --menu-color: white;
+}
+
+.navbar {
+  position: -webkit-sticky; /* ใช้งานใน Chrome */
+  position: sticky; /* ใช้งานในเบราว์เซอร์อื่นๆ */
+  top: 0;
+
+  width: 100%;
+  height: var(--nav-size);
+  background-image: linear-gradient(90deg, var(--nav-color) 45%, var(--nav2-color));
+}
+
+.nav-item {
+  position: absolute;
+  right: 30px;
+}
+
+.navi-bar {
+  height: var(--nav-size);
+  background-color: var(--nav-color);
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+.navi-bar label:hover{
+  color:#AE70E9;
+}
+
+.navi-icon {
+  background-image: linear-gradient(90deg, var(--nav-color), var(--nav2-color));
+}
+
+
+.icon:active {
+  color: rgb(168, 162, 162);
+}
+
+.head-home {  
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+
+.boardgame {
+  width: 130px; 
+  height: 180px; 
+  overflow: hidden; 
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+
+}
+
+.boardgame img{
+  width: 100%; 
+  height: 100%; 
+  border-radius: 1rem;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.game-menu {
+  background-color: var(--menu-color);
+
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+}
+
+.game-menu img {
+  width: 60px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.search-bar {
+  border: 2px solid var(--nav-color);
+  border-radius: 35px;
+}
+
+
+.icon-nav {
+  color: white;
+}
+
+.icon-nav:active{
+  color: gray; /* เปลี่ยนสีข้อความเป็นสีแดงเมื่อมีการคลิกหรือโฟกัส */
+}
+
+
+.noti-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -25px;
+
+}
+
+.noti-show img{
+
+  border: 2px solid black;
+  border-radius: 11px;
+}
+
+.square {
+  position: absolute;
+  background-color:white;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  right: 40px;
+  top:55px;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+
+.paragraph {
+  text-align: center;
+}
+
+.icon-navi {
+  color: white; 
+}
+
+.icon-popup {
+  position: fixed;
+  bottom: 0%;
+  right: 0%;
+  transform: translate(-15%, -120%);
+  background-color: var(--nav-color);
+  padding: 10px;
+  border-radius: 50px;
+  color: white;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+
+
