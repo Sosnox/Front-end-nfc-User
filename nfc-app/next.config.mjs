@@ -1,25 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // reactStrictMode: true,
   images: {
-    domains: ['210.246.215.173'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.dlst.online',
+        port: '',
+        pathname: '/uploaded_images/**',
+      },
+    ],
   },
 };
 
 export default nextConfig;
 
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-
-//   images: {
-//     remotePatterns: [
-//       {
-//         // protocol: 'http:',
-//         hostname: '**',
-//         domains: ['210.246.215.173'],
-//       }
-//     ],
-//   },
-// };
-
-// export default nextConfig;
