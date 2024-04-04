@@ -9,6 +9,7 @@ import werewolf from '../public/imageBoardGame/werewolf.jpg';
 // import logo from '../public/tobecon.png';
 import { useEffect, useState } from 'react';
 import selectAllBoardGame from '@/api/BoardGame/selectAllBoardGame';
+import { fetchImage } from './fetchImage';
 
 interface BoardGame {
     id_boardgame: number,
@@ -48,7 +49,7 @@ function AddGameCard (){
             {
                 BoardGame.map((data, index) => (
                     <div className='rounded-3xl p-2 game-menu mx-10' >
-                        <Link href={`./BoardGame/${data.id_boardgame}`}><BoardGameImage data={data} key={index} imageURL={`${NEXT_PUBLIC_URL_image}${data.path_image_boardgame}`}/></Link>
+                        <Link href={`./BoardGame/${data.id_boardgame}`}><BoardGameImage data={data} key={index} imageURL={fetchImage(data.path_image_boardgame)}/></Link>
                     </div>
             ))}
         </div>
