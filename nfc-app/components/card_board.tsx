@@ -73,7 +73,7 @@ export default function CardBoard( { data }: { data: Card} ) {
 return (
   <div className='h-full'>
       <div onClick={() => viewCard(data.title_card)} className="cursor-pointer">
-        <Image
+        <img
           src={fetchImage(data.path_image_card)}
           alt={data.title_card}
           width={300}

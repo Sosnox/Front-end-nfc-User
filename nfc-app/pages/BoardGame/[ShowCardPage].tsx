@@ -108,7 +108,7 @@ return (
         <Search />
         <label className='text-2xl font-bold mb-10 underline'>BoardGame : {boardGame[0]?.title_game}</label>
         <Link href={`/BoxBoardGame/${id_boardgame_from_path}`}>
-            <Image src={fetchImage(boardGame[0]?.path_image_boardgame)} alt="Werewolf" width={300} height={400} />
+            <img src={fetchImage(boardGame[0]?.path_image_boardgame)} alt="Werewolf" width={300} height={400} />
         </Link>
 
         <h1 className="mt-10 font-bold text-[20px]">การ์ดเกม {boardGame[0]?.title_game}</h1>

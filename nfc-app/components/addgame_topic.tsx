@@ -29,7 +29,7 @@ function AddGameTopic() {
     function BoardGameImage ({ imageURL }: { imageURL: any}){
         return (
             <div className='boardgame shrink-0'>
-                <Image src={ imageURL } alt={ imageURL }/>
+                <img src={ imageURL } alt={ imageURL }/>
             </div>
         );
     }

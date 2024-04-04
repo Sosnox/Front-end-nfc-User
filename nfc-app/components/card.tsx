@@ -16,7 +16,7 @@ export default function CardGamePage({ data }: { data: any }) {
       <button onClick={goBack}>
         <label className='flex justify-between gap-5 text-2xl font-bold pb-5 text-black-10 w-f'> Card : {data.title_card}  </label>
       </button>
-      <Image src={`${fetchImage(data.path_image_card)}`} alt={`${data.title_card}`} width={300} height={280} />
+      <img src={`${fetchImage(data.path_image_card)}`} alt={`${data.title_card}`} width={300} height={280} />
     </div>
   );
 }
