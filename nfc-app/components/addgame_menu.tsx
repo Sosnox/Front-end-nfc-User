@@ -24,7 +24,7 @@ interface BoardGame {
 }
 
 // const NEXT_PUBLIC_URL_image = process.env.NEXT_PUBLIC_URL_image;
-const NEXT_PUBLIC_URL_image = `http://210.246.215.173:8000/static/`
+const NEXT_PUBLIC_URL_image = `http://210.246.215.173:8000/uploaded_images/`
  console.log(NEXT_PUBLIC_URL_image, "NEXT_PUBLIC_URL_image")
 
 function AddGameCard (){
@@ -48,7 +48,7 @@ function AddGameCard (){
             {
                 BoardGame.map((data, index) => (
                     <div className='rounded-3xl p-2 game-menu mx-10' >
-                        <Link href={`./BoardGame/${data.id_boardgame}`}> <BoardGameImage data={data} key={index} imageURL={`${NEXT_PUBLIC_URL_image}${data.path_image_boardgame}`} /> </Link>
+                        <Link href={`./BoardGame/${data.id_boardgame}`}><BoardGameImage data={data} key={index} imageURL={`${NEXT_PUBLIC_URL_image}${data.path_image_boardgame}`}/></Link>
                     </div>
             ))}
         </div>

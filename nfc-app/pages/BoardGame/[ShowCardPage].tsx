@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import selectAllBoardGame from '@/api/BoardGame/selectAllBoardGame';
 import selectByIdBoardGame from '@/api/BoardGame/selectByIdBoardGame';
 import BoxBoardGamePage from '../BoxBoardGame/[BoxBoardGame]';
+import { fetchImage } from '@/components/fetchImage';
 
 interface Card {
     id_card: number,
@@ -29,10 +30,6 @@ interface BoardGame {
     time_playing: number,
     count_scan_boardgame: number
 }
-
-
-const NEXT_PUBLIC_URL_image = 'http://210.246.215.173:8000/static/'
-
 
 const nameCard = [
     "villager",
@@ -98,7 +95,6 @@ export default function ShowCardPage() {
                 console.error('Error fetching data:', error);
             }
         };
-
         if (id_boardgame_from_path) {
             fetchCards();
         }
@@ -106,13 +102,14 @@ export default function ShowCardPage() {
 
     console.log(boardGame, "boardgame");
     console.log(cards , 'cards')
-    const path_fetch_image = `${NEXT_PUBLIC_URL_image}${boardGame[0]?.path_image_boardgame}`;
+
+
 return (
     <div className="flex flex-col items-center justify-center mx-10 mt-10">
         <Search />
         <label className='text-2xl font-bold mb-10 underline'>BoardGame : {boardGame[0]?.title_game}</label>
         <Link href={`/BoxBoardGame/${id_boardgame_from_path}`}>
-            <Image src={`${path_fetch_image}`} alt="Werewolf" width={300} height={400} />
+            <Image src={fetchImage(boardGame[0]?.path_image_boardgame)} alt="Werewolf" width={300} height={400} />
         </Link>
 
         <h1 className="mt-10 font-bold text-[20px]">การ์ดเกม {boardGame[0]?.title_game}</h1>

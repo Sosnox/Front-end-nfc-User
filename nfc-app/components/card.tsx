@@ -1,12 +1,7 @@
 import React, { use, useState } from 'react';
 import Image from 'next/image';
 import { MdOutlineArrowBackIos } from "react-icons/md";
-
-
-
-
-
-const NEXT_PUBLIC_URL_image = 'http://210.246.215.173:8000/static/'
+import { fetchImage } from './fetchImage';
 
 export default function CardGamePage({ data }: { data: any }) {
   const goBack = () => {
@@ -21,7 +16,7 @@ export default function CardGamePage({ data }: { data: any }) {
       <button onClick={goBack}>
         <label className='flex justify-between gap-5 text-2xl font-bold pb-5 text-black-10 w-f'> Card : {data.title_card}  </label>
       </button>
-      <Image src={`${NEXT_PUBLIC_URL_image}${data.path_image_card}`} alt={`${data.title_card}`} width={300} height={280} />
+      <Image src={`${fetchImage(data.path_image_card)}`} alt={`${data.title_card}`} width={300} height={280} />
     </div>
   );
 }
