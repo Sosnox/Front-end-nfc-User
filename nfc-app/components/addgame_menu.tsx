@@ -1,4 +1,4 @@
-import Image from 'next/image';
+//import Image from 'next/image';
 import Link from 'next/link'
 import BoxDetail from './box_detail';
 
@@ -56,7 +56,7 @@ function BoardGameImage ({ imageURL , data}: { imageURL: any , data: any}){
     return (
         <div>
             <div className='flex shrink-0'>
-                <Image src={ imageURL } alt={ imageURL } width={20} height={20}/>
+                <img src={ imageURL } alt={ imageURL } width={20} height={20}/>
                 <div className='pl-20'>
                     <BoxDetail {...data}></BoxDetail>
                     <div>
