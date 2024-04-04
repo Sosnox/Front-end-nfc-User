@@ -14,7 +14,7 @@ export default function NavigationBar() {
       <nav className="flex justify-between  navi-bar">
 
         <div className="tranfrom translate-x-[20px] icon">
-            <Link href={'/Home'}>
+            <Link href={'/'}>
                 <Image src={Home} alt="home-navi"/>
                 <div className='translate translate-x-[-5px]'>
                     <label htmlFor="icon" className="text-xs icon-navi">หน้าหลัก</label>

@@ -24,7 +24,7 @@ interface BoardGame {
 }
 
 // const NEXT_PUBLIC_URL_image = process.env.NEXT_PUBLIC_URL_image;
-const NEXT_PUBLIC_URL_image = `http://210.246.215.173:8000/uploaded_images/`
+const NEXT_PUBLIC_URL_image = `https://api.dlst.online/uploaded_images/`
  console.log(NEXT_PUBLIC_URL_image, "NEXT_PUBLIC_URL_image")
 
 function AddGameCard (){

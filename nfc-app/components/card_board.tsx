@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Card from './card';
+import { fetchImage } from './fetchImage';
 // import selectCard from '@/api/selectAllCard';
 
 
@@ -61,7 +62,7 @@ interface CardProps {
   name: string;
 }
 
-const NEXT_PUBLIC_URL_image = 'http://210.246.215.173:8000/static/'
+const NEXT_PUBLIC_URL_image = 'https://api.dlst.online/'
 
 export default function CardBoard( { data }: { data: Card} ) {
   const router = useRouter();
@@ -75,7 +76,7 @@ return (
   <div className='h-full'>
       <div onClick={() => viewCard(data.title_card)} className="cursor-pointer">
         <Image
-          src={`${NEXT_PUBLIC_URL_image}${data.path_image_card}`}
+          src={fetchImage(data.path_image_card)}
           alt={data.title_card}
           width={300}
           height={280}
