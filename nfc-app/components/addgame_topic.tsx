@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import CardBoard from '../components/card_board';
-import wherewolf from '../public/imageBoardGame/werewolf.jpg';
+import werewolf from '../public/boardgame/werewolf.jpg';
 import logo from '../public/tobecon.png';
 import Link from 'next/link'
 
@@ -9,7 +9,7 @@ import Link from 'next/link'
 function AddGameTopic() {
     
     const images = [
-        logo, logo, logo, logo , wherewolf, logo, logo, logo, logo,
+        logo, logo, logo, logo , werewolf, logo, logo, logo, logo,
     ];
 
     return (
