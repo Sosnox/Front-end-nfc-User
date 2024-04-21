@@ -1,10 +1,7 @@
 //import Image from 'next/image';
 import Link from 'next/link'
 import BoxDetail from './box_detail';
-
 import { MdKeyboardArrowRight } from "react-icons/md";
-
-import werewolf from '../public/imageBoardGame/werewolf.jpg';
 import { useEffect, useState } from 'react';
 import selectAllBoardGame from '@/api/BoardGame/selectAllBoardGame';
 import { fetchImage } from './fetchImage';
