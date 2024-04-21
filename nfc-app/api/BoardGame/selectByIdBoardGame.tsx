@@ -1,5 +1,6 @@
 
-const endpoint = 'https://api.dlst.online/get_boardgame_by_id_boardgame/?id_boardgame=';
+// const endpoint = 'https://api.dlst.online/get_boardgame_by_id_boardgame/?id_boardgame=';
+const endpoint = process.env.NEXT_PUBLIC_ENDPOINT + '/get_boardgame_by_id_boardgame/?id_boardgame=';
 
 interface Data {
     id_boardgame: number,
@@ -16,7 +17,7 @@ interface Data {
     count_scan_boardgame: number
 }
 
-const selectByIdBoardGame = async (id_boardgame : number): Promise<Data[]> => {
+const selectByIdBoardGame = async (id_boardgame : string): Promise<Data[]> => {
     try {
         const response = await fetch(`${endpoint}${id_boardgame}`);
         console.log(response,"response")

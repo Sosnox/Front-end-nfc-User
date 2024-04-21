@@ -2,6 +2,7 @@ import { MdAccessTime } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
 import { PiApplePodcastsLogoBold } from "react-icons/pi";
 
+
 interface Data {
     id_boardgame: number,
     title_game: string,

@@ -11,7 +11,7 @@ import PopupIcon from '@/components/popup_icon'
 export default function NavigationBar() {
     return (
     <div className='container-navi mt-14'>
-      <nav className="flex justify-between  navi-bar">
+      <nav className="flex justify-between navi-bar">
 
         <div className="tranfrom translate-x-[20px] icon">
             <Link href={'/'}>

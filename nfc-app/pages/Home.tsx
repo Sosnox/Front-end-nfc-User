@@ -1,8 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import CardBoard from '../components/card_board';
-import wherewolf from '../public/imageBoardGame/werewolf.jpg';
-import logo from '../public/imageBoardGame/avalon.webp';
 import AddGameTopic from '@/components/addgame_topic';
 import AddGameCard from '@/components/addgame_menu';
 
@@ -10,6 +6,9 @@ export default function HomePage() {
     return (
         <div>
             <AddGameTopic></AddGameTopic>
+            <div className='flex w-screen justify-center text-xl font-medium mt-10 mb-7'>
+                <h1>บอร์ดเกมอื่น ๆ</h1>
+            </div>
             <AddGameCard></AddGameCard>
         </div>
     );

@@ -1,6 +1,6 @@
 
-const endpoint = 'https://api.dlst.online/get_card_by_name_boardgame/?name_boardgame=';
-
+// const endpoint = 'https://api.dlst.online/get_card_by_name_boardgame/?name_boardgame=';
+const endpoint = process.env.NEXT_PUBLIC_ENDPOINT + '/get_card_by_name_boardgame/?name_boardgame=';
 interface Data {
     id_card: number,
     title_card : string,

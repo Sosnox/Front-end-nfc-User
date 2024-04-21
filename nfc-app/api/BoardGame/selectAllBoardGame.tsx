@@ -1,5 +1,6 @@
 
-const endpoint = 'https://api.dlst.online/get_all_boardgame/';
+// const endpoint = 'https://api.dlst.online/get_all_boardgame/';
+const endpoint = process.env.NEXT_PUBLIC_ENDPOINT + '/get_all_boardgame/';
 
 
 interface Data {

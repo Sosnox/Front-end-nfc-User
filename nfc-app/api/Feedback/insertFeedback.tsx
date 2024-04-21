@@ -2,14 +2,14 @@ import axios, { AxiosResponse } from 'axios';
 
 interface FeedbackData {
   name_report: string;
-  contact: string;
   detail_report: string;
   rating: number;
   checktypes: string;
 }
 
 
-const endpoint = 'https://api.dlst.online/post_feedback';
+// const endpoint = 'https://api.dlst.online/post_feedback';
+const endpoint = process.env.NEXT_PUBLIC_ENDPOINT + '/post_feedback';
 
 const sendDataToFastAPI = async (data: FeedbackData): Promise<unknown> => {
   try {

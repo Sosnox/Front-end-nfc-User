@@ -1,3 +1,3 @@
 export const fetchImage = (imagePath : string) => {
-    return 'https://api.dlst.online/uploaded_images/' + imagePath;
+    return process.env.NEXT_PUBLIC_URL_IMAGE + imagePath;
 }

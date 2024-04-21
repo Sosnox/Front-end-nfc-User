@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import selectAllCards from "@/api/Card/selectAllCard";
 import CardBoard from "@/components/card_board";
-import Image from 'next/image';
+import {Image} from "@nextui-org/react";
 import Link from 'next/link';
 import Search from '@/components/input_search';
 import { useRouter } from 'next/router';
@@ -85,8 +85,8 @@ export default function ShowCardPage() {
     useEffect(() => {
         const fetchCards = async () => {
             try {
-                const dataCard = await selectAllCards(Number(id_boardgame_from_path));
-                const dataBoardGame = await selectByIdBoardGame(Number(id_boardgame_from_path));
+                const dataCard = await selectAllCards(id_boardgame_from_path);
+                const dataBoardGame = await selectByIdBoardGame(id_boardgame_from_path);
                 if (dataBoardGame) {
                     setBoardGame(dataBoardGame);
                 }
@@ -106,12 +106,12 @@ export default function ShowCardPage() {
 return (
     <div className="flex flex-col items-center justify-center mx-10 mt-10">
         <Search />
-        <label className='text-2xl font-bold mb-10 underline'>BoardGame : {boardGame[0]?.title_game}</label>
-        <Link href={`/BoxBoardGame/${id_boardgame_from_path}`}>
-            <img src={fetchImage(boardGame[0]?.path_image_boardgame)} alt="Werewolf" width={300} height={400} />
+        <label className='text-2xl font-bold mb-10'>{boardGame[0]?.title_game}</label>
+        <Link href={`/BoxBoardGame/${id_boardgame_from_path}`} className=''>
+            <Image src={fetchImage(boardGame[0]?.path_image_boardgame)} alt="Werewolf" width={300} height={400} />
         </Link>
 
-        <h1 className="mt-10 font-bold text-[20px]">การ์ดเกม {boardGame[0]?.title_game}</h1>
+        <h1 className="mt-10 font-bold text-[20px]">การ์ดเกม {boardGame[0]?.title_game.split(' (')[0]}</h1>
         <div className="mb-24 mt-4 grid grid-cols-3 gap-4">
             {Array.isArray(cards) ? cards.map((card) => (
                 <div key={card.id_card}>

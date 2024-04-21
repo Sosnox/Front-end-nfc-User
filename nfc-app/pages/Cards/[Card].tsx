@@ -4,6 +4,7 @@ import CardGamePage from '../../components/card';
 import DetailCard from '../../components/detailcard';
 import { useRouter } from 'next/router';
 import selectByNameCard from '@/api/Card/selectByNameCard'; // Assuming selectByNameCard is the correct function
+import updateViewCard from '@/api/Card/updateViewCard';
 
 interface init_Card {
   id_card: number,
@@ -24,9 +25,10 @@ export default function CardPage() {
     const fetchData = async () => {
       if (name) {
         try {
+          await updateViewCard(name);
           const data_card = await selectByNameCard(name);
           console.log(data_card, "data_card")
-          setCard(data_card[0]); // Pass the first element of the data_card array as a single argument
+          setCard(data_card[0]);
         } catch (error) {
           console.error('Error fetching data:', error);
         }
@@ -44,7 +46,7 @@ export default function CardPage() {
   return (
     <div className="flex flex-col justify-center items-center p-12">
       <CardGamePage data={card} />
-      <p className='paragraph'><DetailCard data={card} /></p>
+      <div className='paragraph'><DetailCard data={card} /></div>
     </div>
   );
 }

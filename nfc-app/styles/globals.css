@@ -61,17 +61,17 @@
 
 
 .boardgame {
-  width: 130px; 
-  height: 180px; 
-  overflow: hidden; 
+  width: 130px;
+  height: 180px;
+  overflow: hidden;
   box-shadow: 0 7px 8px rgba(0, 0, 0, 0.4);
   border-radius: 1rem;
 
 }
 
 .boardgame img{
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   border-radius: 1rem;
   object-fit: cover;
   cursor: pointer;

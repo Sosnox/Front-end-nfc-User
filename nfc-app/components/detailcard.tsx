@@ -49,17 +49,15 @@ const detailCard: DetailCardData = {
     "mystic" : "เทพผู้รู้แจ้ง (Mystic Seer) ในแต่ละคืน เลือกชี้ผู้เล่นหนึ่งคนเพื่อตรวจสอบว่าเป็นบทบาทใด ใช้ความสามารถในการตรวจสอบสถานะของผู้เล่นอื่น ๆ เพื่อช่วยให้กลุ่มของคุณเข้าใจสถานะและบทบาทของผู้เล่นที่น่าสงสัยสื่อสารกับทีมของคุณเพื่อสร้างแผนการที่เหมาะสมในการต่อสู้กับมนุษย์หมาป่าและชาวบ้าน",
     "alphawolf" : "มนุษย์หมาป่าจ่าฝูง (Alpha Wolf) ในคืนหลังจากที่มีมนุษย์หมาป่าถูกกำจัดในตอนกลางวัน สามารถเลือกเปลี่ยนผู้เล่นที่ฝ่ายมนุษย์หมาป่าเลือกกำจัดให้เป็นมนุษย์หมาป่าตัวใหม่ได้ แทนที่จะกำจัดตามปกติ ใช้ได้ครั้งเดียวในเกม",
     "spellcaster  " : "จอมเวท (Spellcaster) ในแต่ละคืน เลือกผู้เล่นหนึ่งคนให้ห้ามพูดในวันถัดไป **ใช้สถานะของคุณเพื่อช่วยให้ชาวบ้านได้รับความไว้วางใจมากขึ้น โดยใช้สกิลของคุณในการช่วยคุณล่วงหน้าหรือปกป้องตัวคุณและคนในครอบครัวของคุณ สร้างกลุ่มและการสื่อสารอย่างมีประสิทธิภาพกับมนุษย์หมาป่าอื่น ๆ ในฝ่ายของคุณใช้ความสามารถในการโจมตีเพื่อช่วยให้กลุ่มของคุณชนะในเกม"
-
 };
 
 export default function DetailCard({ data }: any) {
   return (
-    <div className='flex flex-col text-lg items-center '>
+    <div className='flex flex-col text-lg items-center w-full'>
       <label className='text-[20px] font-bold my-5 underline'>ข้อมูลการ์ด</label>
-      <div className='text-base '>
-        <p><label className='text-sm font-bold pb-5 '>ชื่อการ์ด : </label> {data.title_card}</p>
-        <p><label className='text-sm font-bold pb-5 '>วิธีการเล่น : </label>{data.tick_card}</p>
-        <p><label className='text-sm font-bold pb-5 '> รายละเอียด : </label>{data.detail_card}</p>
+      <div className='flex flex-col text-lg text-left w-full items-start'>
+        <p><label className='text-lg font-bold pb-5 italic'>วิธีการเล่น : </label>{data.tick_card}</p>
+        <p><label className='text-lg font-bold pb-5 italic'> รายละเอียด : </label>{data.detail_card}</p>
       </div>
     </div>
   );

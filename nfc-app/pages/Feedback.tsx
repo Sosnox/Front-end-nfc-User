@@ -1,43 +1,76 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { Input, Select, SelectItem } from "@nextui-org/react";
+import React, { useMemo, useState } from 'react';
+import {
+    Input,
+    Select,
+    SelectItem,
+    Modal,
+    Button ,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalFooter, 
+    useDisclosure,
+    Spinner,
+    Image} from "@nextui-org/react";
 import FiveStar from '@/components/fivestar';
 import sendDataToFastAPI from '@/api/Feedback/insertFeedback';
 
-
 export default function FeedbackPage() {
-
     type InputValue = {
         name_report: string;
-        contact: string;
         detail_report: string;
         rating: number;
         checktypes: string;
-    }
-
-    const checkType = ["Card", "BoardGame"]
+    };
 
     const [valueInput, setValueInput] = useState<InputValue>({
         name_report: '',
-        contact: '',
         detail_report: '',
         rating: 0,
         checktypes: ''
-    })
+    });
 
-    const submitData = async (valueInput : InputValue) => {
-        console.log("Clicked")
+    const [isModalVisible, setModalVisible] = useState(false);
+    const {isOpen, onOpen, onOpenChange ,onClose} = useDisclosure();
+
+    const submitData = async () => {
+        onOpen()
+        console.log("Clicked");
         try {
             await sendDataToFastAPI(valueInput);
-            console.log("success")
-          } catch (error) {
-            console.log("error", error)
-          }
-    }
-    console.log(valueInput)
+            setModalVisible(true);
+        } catch (error) {
+            console.log("Error", error);
+        }
+    };
+
+    const checkType = ["Card", "BoardGame"];
+    console.log(valueInput);
 
     return (
         <div className="flex flex-col items-center p-12 ">
+            <Modal isOpen={isOpen}
+                    onOpenChange={onOpenChange}
+                    placement='center'
+                    onClose={onClose}
+            >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1 text-2xl">Success</ModalHeader>
+              <ModalBody className='flex flex-col justify-center items-center text-lg'>
+                    <Image src="/iconCheck.svg" width={100} height={200} />
+                    <label>ส่ง Feedback สำเร็จ</label>
+              </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onPress={onClose}>
+                    Close
+                    </Button>
+                </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
             <label className='text-3xl font-bold pb-10'>Feedback Form</label>
             <div className='flex flex-col gap-4 pb-5 w-full justify-center items-center'>
                 <Input
@@ -45,71 +78,52 @@ export default function FeedbackPage() {
                     label="Name"
                     variant="bordered"
                     placeholder='Name'
-                    onChange={(e) => {
-                        setValueInput(prevState => ({
-                            ...prevState,
-                            name_report: e.target.value,
-                        }));
-                    }}
+                    onChange={(e) => setValueInput(prevState => ({
+                        ...prevState,
+                        name_report: e.target.value,
+                    }))}
                     className="max-w-xs"
                 />
-                <Input
-                    type="email"
-                    label="Contact"
-                    variant="bordered"
-                    placeholder='juzi@nextui.org'
-                    onChange={(e) => {
-                        setValueInput(prevState => ({
-                            ...prevState,
-                            contact: e.target.value,
-                        }));
-                    }}
-                    className="max-w-xs"
-                />
-            </div>
-            <Select
-                required
-                label="Choose Type"
-                placeholder="Card / BoardGame"
-                color="default"
-                className="max-w-xs pb-5"
-                onChange={(e) => {
-                    setValueInput(prevState => ({
+                <Select
+                    required
+                    label="Choose Type"
+                    placeholder="Select Type"
+                    color="default"
+                    className="max-w-xs pb-5"
+                    onChange={(e) => setValueInput(prevState => ({
                         ...prevState,
                         checktypes: e.target.value,
-                    }));
-                }}
-            >
-                {checkType.map((type: string) => (
-                    <SelectItem key={type} value={type}>
-                        {type}
-                    </SelectItem>
-                ))}
-            </Select>
-            <div className='flex flex-col w-full pb-4 sm:items-center items-start'>
-                <div>Share</div>
-                <FiveStar rating={(rating: number) => {
-                    setValueInput(prevState => ({
-                        ...prevState,
-                        rating: rating,
-                    }));
-                }} />
-            </div>
-            <Input
-                type="email"
-                label="Comment"
-                variant="bordered"
-                onChange={(e) => {
-                    setValueInput(prevState => ({
+                    }))}
+                >
+                    {checkType.map((type) => (
+                        <SelectItem key={type} value={type}>
+                            {type}
+                        </SelectItem>
+                    ))}
+                </Select>
+                <div className='flex flex-col w-full pb-4 pl-3 sm:items-center items-start'>
+                    <div>Share</div>
+                    <FiveStar rating={(rating: number) => {
+                        setValueInput(prevState => ({
+                            ...prevState,
+                            rating: rating,
+                        }));
+                    }} />
+                </div>
+                <Input
+                    type="text"
+                    label="Comment"
+                    variant="bordered"
+                    onChange={(e) => setValueInput(prevState => ({
                         ...prevState,
                         detail_report: e.target.value,
-                    }));
-                }}
-                placeholder='Add your comments...'
-                className="max-w-xs"
-            />
-            <div className='flex w-full justify-end md:justify-center'>
-                <button className='bg-blue-400 text-white p-2 rounded-md mt-7 hover:bg-slate-600' onClick={() => submitData(valueInput)}>Submit</button>
+                    }))}
+                    placeholder='Add your comments...'
+                    className="max-w-xs h-40"
+                />
+                <div className='flex w-full justify-end md:justify-center'>
+                    <button className='bg-blue-400 text-white p-2 rounded-md mt-7 hover:bg-slate-600' onClick={submitData}>Submit</button>
+                </div>
             </div>
         </div>
     );

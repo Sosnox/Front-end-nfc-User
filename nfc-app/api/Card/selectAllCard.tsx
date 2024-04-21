@@ -1,8 +1,9 @@
 
 
 
-// const endpoint = `${process.env.endpoint}/get_all_card_by_id_boardgame/?id_boardgame=`;
-const endpoint = 'https://api.dlst.online/get_all_card_by_id_boardgame/?id_boardgame=';
+
+// const endpoint = 'https://api.dlst.online/get_all_card_by_id_boardgame/?id_boardgame=';
+const endpoint = process.env.NEXT_PUBLIC_ENDPOINT + '/get_all_card_by_id_boardgame/?id_boardgame=';``
 
 interface Data {
     id_card: number,
@@ -13,7 +14,7 @@ interface Data {
     count_scan_card: number
 }
 
-const selectAllCard = async (id: number): Promise<Data[]> => {
+const selectAllCard = async (id: string): Promise<Data[]> => {
     try {
         const response = await fetch(`${endpoint}${id}`);
         if (!response.ok) {
