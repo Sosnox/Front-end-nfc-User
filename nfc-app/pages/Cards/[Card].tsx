@@ -44,9 +44,9 @@ export default function CardPage() {
 
   console.log(card, "cardnaja")
   return (
-    <div className="flex flex-col justify-center items-center p-12">
+    <div className="flex flex-col p-12 ">
       <CardGamePage data={card} />
-      <div className='paragraph'><DetailCard data={card} /></div>
+      <div className=''><DetailCard data={card} /></div>
     </div>
   );
 }
