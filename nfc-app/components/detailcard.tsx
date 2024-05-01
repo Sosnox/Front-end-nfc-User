@@ -56,6 +56,7 @@ export default function DetailCard({ data }: any) {
     <div className='flex flex-col text-lg items-center w-full'>
       <label className='text-[20px] font-bold my-5 underline'>ข้อมูลการ์ด</label>
       <div className='flex flex-col text-lg text-left w-full items-start'>
+      <p><label className='text-lg font-bold pb-5 italic'>จำนวนการเข้าชม : </label>{data.count_scan_card}</p>
         <p><label className='text-lg font-bold pb-5 italic'>วิธีการเล่น : </label>{data.tick_card}</p>
         <p><label className='text-lg font-bold pb-5 italic'> รายละเอียด : </label>{data.detail_card}</p>
       </div>
