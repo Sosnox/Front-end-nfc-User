@@ -1,28 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import CardBoard from '../components/card_board';
-import werewolf from '../public/boardgame/werewolf.jpg';
-import logo from '../public/tobecon.png';
 import Link from 'next/link'
+import RecommendedBoardGames from '@/api/BoardGame/selectRecommend';
+import { fetchImage } from './fetchImage';
 
 
 function AddGameTopic() {
+    const [boardGame, setBoardGame] = useState<any[]>([]);
 
-    //รอเพิ่มข้อมูลจาก API
-    const images = [
-        logo, logo, logo, logo , werewolf, logo, logo, logo, logo,
-    ];
+    useEffect(() => {
+        const fetchBoardGame = async () => {
+            try {
+                const data = await RecommendedBoardGames();
+                setBoardGame(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchBoardGame();
+    }, []);
 
+    console.log(boardGame, "dataToppic")
     return (
         <div className="w-full">
             <div className='flex justify-center pb-14 mt-14 text-[30px] font-bold underline'>
-                <h1> บอร์ดเกมแนะนำ </h1>
+                <h1>บอร์ดเกมแนะนำ</h1>
             </div>
-            <div className="flex justify-center gap-4 overflow-auto h-60 w-full">
-                {
-                    images.map((image, index) => (
-                        <Link href={'./BoardGame/1'}>  <BoardGameImage key={index} imageURL={image} /> </Link>
-                    ))}
+            <div className='grid grid-row-[w-1/2_w-1/2] overflow-auto px-4'>
+            <div className="flex justify-center gap-4 h-60">
+                {boardGame.map((game, index) => (
+                    <Link key={index} href={`./BoardGame/${game.id_boardgame}`}>
+                        <span><BoardGameImage imageURL={game.path_image_boardgame} /></span>
+                    </Link>
+                ))}
+            </div>
+
             </div>
         </div>
     );
@@ -30,11 +42,10 @@ function AddGameTopic() {
     function BoardGameImage ({ imageURL }: { imageURL: any}){
         return (
             <div className='flex boardgame shrink-0'>
-                <Image src={ imageURL } alt={ imageURL }/>
+                <Image src={fetchImage(imageURL)} alt={ imageURL } width={200} height={200}/>
             </div>
         );
     }
-
 }
 
 export default AddGameTopic;

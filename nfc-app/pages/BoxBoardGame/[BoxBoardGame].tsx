@@ -100,7 +100,7 @@ export default function BoxBoardGamePage() {
 
                     <div className='text-[24px] flex justify-center mt-[50px] font-semibold'>เนื้อหา </div>
                     <div className=' break-words indent-[10px]'>
-                        {boardGame.detail_game}บอดี้การ์ด (Bodyguard) ในแต่ละคน ให้เลือกผู้เล่นหนึ่งคน ผู้เล่นคนนั้นจะไม่ถูกกำจัดในคืนนั้น (เลือกตัวเองไม่ได้ และไม่สามารถเลือกปกป้องคนเดิมซ้ำ 2 คืนติดกันได้) **ใช้ความสามารถในการปกป้องชาวบ้านที่สำคัญ โดยคุณสามารถเลือกที่จะปกป้องตัวคุณเองหรือคนอื่นในเกมได้ ควรใช้ความสามารถนี้อย่างมีประสิทธิภาพในเวลาที่เหมาะสม"
+                        {boardGame.detail_game}
                     </div>
 
 

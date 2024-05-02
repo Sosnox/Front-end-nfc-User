@@ -17,6 +17,7 @@ interface BoardGame {
     recommend : boolean
     age_recommend: number,
     time_playing: number,
+    type_game: string,
     count_scan_boardgame: number
 }
 
