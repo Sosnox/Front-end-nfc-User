@@ -51,6 +51,7 @@ function BoardGameImage ({ imageURL , data}: { imageURL: any , data: any}){
     return (
         <div>
             <div className='flex shrink-0'>
+
                 <img
                     src={ imageURL }
                     alt={ imageURL }

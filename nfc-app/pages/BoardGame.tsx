@@ -12,7 +12,6 @@ export default function BoardGamePage() {
             <h1>All GameBoard</h1>
         </div>
       </div>
-
       <AddGameCard></AddGameCard>
     </div>
   );

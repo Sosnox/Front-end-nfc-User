@@ -7,7 +7,7 @@ import Text_logo2 from "../styles/Img-icon/TextNav2.svg";
 
 function Navbar(){
     return (
-        <nav className="navbar z-20">
+        <nav className="navbar z-50">
             <div>
                 <div className="tranform translate-x-[1px] translate-y-[-15px] nav-img flex">
                     <Link href="/"><Image src={ logo } alt="logo" width={100}/></Link>
