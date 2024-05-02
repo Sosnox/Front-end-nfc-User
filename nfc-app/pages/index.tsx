@@ -13,20 +13,9 @@ import { Navbar } from '@nextui-org/react';
 
 
 
-const nameCard = [
-  'werewolf',
-  'hunter',
-  'seer',
-  'villager',
-  'bodyguard',
-  'werewolf',
-  'werewolf',
-  'werewolf',
-];
 
 export default function Home() {
-  // const router = useRouter();
-  // const CardId = params.nameCard
+
 
   return (
     <main>

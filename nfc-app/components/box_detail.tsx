@@ -25,22 +25,22 @@ function BoxDetail({ title_game,
 
     return (
         <div className="flex flex-col pt-1 absolute left-[120px]">
-            <text className="text-[20px] font-bold">{title_game}</text>
+            <label className="text-[20px] font-bold">{title_game}</label>
             <div className="flex flex-col text-[15px] ">
-                <text className="flex">
+                <label className="flex">
                     <MdAccessTime size={23} />
                     <span className="ml-2">{time_playing} นาที</span>
-                </text>
+                </label>
 
-                <text className="flex">
+                <label className="flex">
                     <MdGroup size={23} />
                     <span className="ml-2">{player_recommend_start} - {player_recommend_end} คน</span>
-                </text>
+                </label>
 
-                <text className="flex">
+                <label className="flex">
                     <PiApplePodcastsLogoBold size={23} />
                     <span className="ml-2">{age_recommend} ปี</span>
-                </text>
+                </label>
             </div>
 
         </div>

@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-// const endpoint = 'https://api.dlst.online/get_all_boardgame/';
-const endpoint = process.env.NEXT_PUBLIC_ENDPOINT + '/get_all_boardgame/';
-
+const endpoint = process.env.NEXT_PUBLIC_ENDPOINT + '/getRecommended';
 
 interface Data {
     id_boardgame: number,
@@ -13,11 +13,10 @@ interface Data {
     recommend : boolean
     age_recommend: number,
     time_playing: number,
-    type_game: string,
     count_scan_boardgame: number
 }
 
-const selectAllBoardGame = async (): Promise<Data[]> => {
+const RecommendedBoardGames = async (): Promise<any[]> => {
     try {
         const response = await fetch(`${endpoint}`);
         if (!response.ok) {
@@ -31,4 +30,4 @@ const selectAllBoardGame = async (): Promise<Data[]> => {
     }
 };
 
-export default selectAllBoardGame;
+export default RecommendedBoardGames;
