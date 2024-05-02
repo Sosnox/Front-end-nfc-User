@@ -57,27 +57,54 @@ export default function BoxBoardGamePage() {
             </div>
 
             <div className="flex justify-center pb-10">
-                <h1 className="font font-bold text-[25px]">{boardGame.title_game}</h1>
+                <h1 className="font font-bold text-[24px]">{boardGame.title_game}</h1>
             </div>
 
             <div className='flex flex-col items-center'>
                 {/* <YouTubeVideo videoId={"9MojLmVYCn4"} /> */}
+                
                 <iframe className="mb-10 rounded-lg"
-                        width="300"
-                        height="200"
-                        title="Vdo"
-                        src={boardGame.path_youtube}
-                        allowFullScreen>
+                    width="300"
+                    height="200"
+                    title="Vdo"
+                    src={boardGame.path_youtube}
+                    allowFullScreen>
                 </iframe>
+                <div>
+                    จำนวนการเข้าชม {boardGame.count_scan_boardgame}
+                </div>
 
-                <label className='text-2xl font-bold pb-5'>คำอธิบาย</label>
-                <label className='text-lg'>
-                    <p><label className='text-lg font-bold pb-5 '>รายละเอียด : </label> {boardGame.detail_game}</p>
-                    <p><label className='text-lg font-bold pb-5 '>ประเภทบอร์ดเกมส์ :</label> {boardGame.type_game}</p>
-                    <p><label className='text-lg font-bold pb-5 '>เหมาะสำหรับผู้เล่นอายุตั้งแต่ : </label>{boardGame.age_recommend}+ ปี</p>
-                    <p><label className='text-lg font-bold pb-5 '>จำนวนผู้เล่น</label> {boardGame.player_recommend_start} - {boardGame.player_recommend_end} คน</p>
-                    <p><label className='text-lg font-bold pb-5 '>เวลาเล่นต่อเกมส์</label> {boardGame.time_playing} นาที</p>
-                </label>
+                <label className='text-2xl font-bold pb-5 mt-6'>คำอธิบาย</label>
+
+                <div className='grid gap-1'>
+
+                    <div className='flex space-x-2'>
+                        <div className='font-semibold'>ประเภทบอร์ดเกมส์ :</div> 
+                        <div>{boardGame.type_game}</div>
+                    </div>
+
+                    <div className='flex space-x-2'>
+                        <div className='font-semibold'> เหมาะสำหรับผู้เล่นอายุตั้งแต่ : </div>
+                        <div>{boardGame.age_recommend}+ ปี</div>
+                    </div>
+
+                    <div className='flex space-x-2'>
+                        <div className='font-semibold'>จำนวนผู้เล่น :</div>
+                        <div>{boardGame.player_recommend_start} - {boardGame.player_recommend_end} คน</div>
+                    </div>
+
+                    <div className='flex space-x-2'>
+                        <div  className='font-semibold'>เวลาเล่นต่อเกมส์ : </div>
+                        <div>{boardGame.time_playing} นาที</div>
+                    </div>
+
+                    <div className='text-[24px] flex justify-center mt-[50px] font-semibold'>เนื้อหา </div>
+                    <div className=' break-words indent-[10px]'>
+                        {boardGame.detail_game}
+                    </div>
+
+
+                </div>
             </div>
         </div>
     );

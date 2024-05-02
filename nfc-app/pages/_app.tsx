@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function App({ Component, pageProps }: AppProps) {
   return (
 
-    <div className={inter.className}>
+    <div className={`h-[170vh] ${inter.className}`}>
       <NavBar />
       <Component {...pageProps} />
       <PopupIcon/>
