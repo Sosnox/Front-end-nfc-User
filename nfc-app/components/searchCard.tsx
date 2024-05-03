@@ -17,7 +17,7 @@ const SearchCard: React.FC<SearchCardProps> = ({ id_card }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://210.246.215.173:8000/searchCard/` + id_card);
+                const response = await fetch(`https://api.dlst.online/searchCard/` + id_card);
                 if (response.ok) {
                     const data: CardData = await response.json();
                     setResults(data);
