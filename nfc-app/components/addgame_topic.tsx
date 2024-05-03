@@ -42,7 +42,7 @@ function AddGameTopic() {
     function BoardGameImage ({ imageURL }: { imageURL: any}){
         return (
             <div className='flex boardgame shrink-0'>
-                <Image src={fetchImage(imageURL)} alt={ imageURL } width={200} height={200}/>
+                <img src={fetchImage(imageURL)} alt={ imageURL } width={200} height={200}/>
             </div>
         );
     }

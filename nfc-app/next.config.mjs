@@ -10,7 +10,7 @@ const nextConfig = {
       },
       // If you want to allow any localhost port
       {
-        protocol: 'http',
+        protocol: 'https',
         hostname: 'localhost',
         port: '',
         pathname: '/uploaded_images/**',
