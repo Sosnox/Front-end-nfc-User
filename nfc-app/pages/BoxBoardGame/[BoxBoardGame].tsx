@@ -50,8 +50,7 @@ export default function BoxBoardGamePage() {
 
 
     return (
-        <div className="p-10">
-
+        <div className="p-10 h-full ">
             <div className='absolute left-5 back-button'>
                 <button onClick={goBack}> <MdOutlineArrowBackIos className="text-left" size={40} /> </button>
             </div>
@@ -62,24 +61,24 @@ export default function BoxBoardGamePage() {
 
             <div className='flex flex-col items-center'>
                 {/* <YouTubeVideo videoId={"9MojLmVYCn4"} /> */}
-                
-                <iframe className="mb-10 rounded-lg"
+
+                <iframe className="mb-5 rounded-lg"
                     width="300"
                     height="200"
                     title="Vdo"
                     src={boardGame.path_youtube}
                     allowFullScreen>
                 </iframe>
-                <div>
+                <label className='text-gray-500 text-sm'>
                     จำนวนการเข้าชม {boardGame.count_scan_boardgame}
-                </div>
+                </label>
 
                 <label className='text-2xl font-bold pb-5 mt-6'>คำอธิบาย</label>
 
                 <div className='grid gap-1'>
 
                     <div className='flex space-x-2'>
-                        <div className='font-semibold'>ประเภทบอร์ดเกมส์ :</div> 
+                        <div className='font-semibold'>ประเภทบอร์ดเกมส์ :</div>
                         <div>{boardGame.type_game}</div>
                     </div>
 
@@ -94,11 +93,11 @@ export default function BoxBoardGamePage() {
                     </div>
 
                     <div className='flex space-x-2'>
-                        <div  className='font-semibold'>เวลาเล่นต่อเกมส์ : </div>
+                        <div className='font-semibold'>เวลาเล่นต่อเกมส์ : </div>
                         <div>{boardGame.time_playing} นาที</div>
                     </div>
 
-                    <div className='text-[24px] flex justify-center mt-[50px] font-semibold'>เนื้อหา </div>
+                    <div className='text-[24px] flex justify-center mt-[30px] font-semibold'>เนื้อหา </div>
                     <div className=' break-words indent-[10px]'>
                         {boardGame.detail_game}
                     </div>

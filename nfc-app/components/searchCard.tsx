@@ -39,11 +39,11 @@ const SearchCard: React.FC<SearchCardProps> = ({ id_card }) => {
     return (
         <div className='relative'>
             <input type="text" placeholder='Search Card . . .' className="border rounded-xl w-[250px] border-black p-4 h-10" onChange={handleInputChange} />
-            <div className='absolute bg-white border rounded-xl mt-1 w-48'>
+            <div className='absolute bg-white rounded-xl mt-1 w-[300px] z-30'>
                 {searchTerm.length > 0 && Object.entries(results)
                     .filter(([key, value]) => value.toLowerCase().includes(searchTerm.toLowerCase()))
                     .map(([key, value]) => (
-                        <div key={key} className='bg-white border w-[250px] border-gray-200'>
+                        <div key={key} className='bg-white border w-[250px] border-gray-200 '>
                             <Link href={`/Cards/${value}`} className="block p-1 text-lg hover:bg-gray text-[14px] break-all">
                                 <span>{value}</span>
                             </Link>

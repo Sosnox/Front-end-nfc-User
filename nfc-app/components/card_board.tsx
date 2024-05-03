@@ -8,46 +8,6 @@ import { fetchImage } from './fetchImage';
 // import selectCard from '@/api/selectAllCard';
 
 
-const nameCard = [
-  "villager",
-  "werewolf",
-  "seer",
-  "cupid",
-  "bodyguard",
-  "auraseer",
-  "drunk",
-  "prince",
-  "priest",
-  "pi",
-  "troublemaker",
-  "witch",
-  "oldhag",
-  "apprenticeseer",
-  "mayor",
-  "hunter",
-  "diseased",
-  "pacifist",
-  "ghost",
-  "mason",
-  "doppelganger",
-  "lycan",
-  "toughguy",
-  "idiot",
-  "wolfcup",
-  "minion",
-  "sorcerer",
-  "hoodlum",
-  "cursed",
-  "tanner",
-  "vampire",
-  "cultleader",
-  "revealer",
-  "mentalist",
-  "huntress",
-  "mystic",
-  "alphawolf",
-  "spellcaster"
-];
 
 interface Card {
   id_card: number,
