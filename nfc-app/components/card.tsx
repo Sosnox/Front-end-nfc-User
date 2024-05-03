@@ -14,7 +14,7 @@ export default function CardGamePage({ data }: { data: any }) {
       </div>
       <button onClick={goBack}>
         <div className='text-2xl text-left mb-4'>
-          <p><label className='text-2xl font-bold pb-5 '>ชื่อการ์ด : </label> {data.title_card}</p>
+          <div className='text-[28px] underline font-semibold pb-5 '>{data.title_card} </div>
         </div>
       </button>
       <img src={`${fetchImage(data.path_image_card)}`} alt={`${data.title_card}`} width={300} height={280} />

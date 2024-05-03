@@ -37,10 +37,10 @@ function AddGameCard (){
     }, []);
 
     return (
-        <div className='grid gap-6 pb-24'>
+        <div className='grid gap-6 mr-8 ml-8 pb-24'>
             {
                 BoardGame.map((data) => (
-                    <div className='rounded-3xl p-2 game-menu mx-10' >
+                    <div className=' row-span-3 rounded-3xl p-2 game-menu border-t-1 border-black ' >
                         <Link href={`./BoardGame/${data.id_boardgame}`}><BoardGameImage data={data} imageURL={fetchImage(data.path_image_boardgame)}/></Link>
                     </div>
             ))}
@@ -51,18 +51,16 @@ function AddGameCard (){
 function BoardGameImage ({ imageURL , data}: { imageURL: any , data: any}){
     return (
         <div>
-            <div className='flex shrink-0'>
+            <div className='flex items-center '>
 
                 <img
                     src={ imageURL }
                     alt={ imageURL }
                     width={20}
                     height={20}/>
-                <div className='pl-20'>
+                <div className=''>
                     <BoxDetail {...data}></BoxDetail>
-                    <div>
-                        <MdKeyboardArrowRight className="absolute right-[50px] transform translate-y-[30px]" size={50}/>
-                    </div>
+        
                 </div>
             </div>
         </div>

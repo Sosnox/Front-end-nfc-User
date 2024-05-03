@@ -23,7 +23,7 @@ function AddGameTopic() {
     console.log(boardGame, "dataToppic")
     return (
         <div className="w-full">
-            <div className='flex justify-center pb-14 mt-14 text-[30px] font-bold underline'>
+            <div className='flex justify-center pb-14 mt-14 text-[32px] font-semibold '>
                 <h1>บอร์ดเกมแนะนำ</h1>
             </div>
             <div className='grid grid-row-[w-1/2_w-1/2] overflow-auto px-4'>

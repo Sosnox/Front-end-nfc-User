@@ -79,14 +79,12 @@
 
 .game-menu {
   background-color: var(--menu-color);
-
-  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.7);
   cursor: pointer;
-
 }
 
 .game-menu img {
-  width: 60px;
+  width: 70px;
   height: 100px;
   border: 1px solid black;
   border-radius: 1rem;

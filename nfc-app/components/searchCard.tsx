@@ -5,7 +5,12 @@ interface CardData {
     [key: string]: string; 
 }
 
-const SearchCard : React.FC = (id_card : any) => {
+// Define props type for the component
+interface SearchCardProps {
+    id_card: string;
+}
+
+const SearchCard: React.FC<SearchCardProps> = ({ id_card }) => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [results, setResults] = useState<CardData>({});
 
@@ -25,20 +30,24 @@ const SearchCard : React.FC = (id_card : any) => {
         };
 
         fetchData();
-    }, []);
+    }, [id_card]); // Add id_card to dependency array to re-fetch data when id_card changes
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);
     };
 
     return (
-        <div>
-            <div>
-                <input type="text" className="p-4" onChange={handleInputChange} />
+        <div className='relative'>
+            <input type="text" placeholder='Search Card . . .' className="border rounded-xl w-[250px] border-black p-4 h-10" onChange={handleInputChange} />
+            <div className='absolute bg-white border rounded-xl mt-1 w-48'>
                 {searchTerm.length > 0 && Object.entries(results)
                     .filter(([key, value]) => value.toLowerCase().includes(searchTerm.toLowerCase()))
                     .map(([key, value]) => (
-                        <Link href={`/Cards/${value}`} className="bg-white p-4">{value}</Link>
+                        <div key={key} className='bg-white border w-[250px] border-gray-200'>
+                            <Link href={`/Cards/${value}`} className="block p-1 text-lg hover:bg-gray text-[14px] break-all">
+                                <span>{value}</span>
+                            </Link>
+                        </div>
                     ))}
             </div>
         </div>

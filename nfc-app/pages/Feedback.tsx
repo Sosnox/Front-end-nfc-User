@@ -21,13 +21,13 @@ export default function FeedbackPage() {
         detail_report: string;
         rating: number;
         checktypes: string;
-    };
+        };
 
     const [valueInput, setValueInput] = useState<InputValue>({
         name_report: '',
         detail_report: '',
         rating: 0,
-        checktypes: ''
+        checktypes: '',
     });
 
     const [isModalVisible, setModalVisible] = useState(false);

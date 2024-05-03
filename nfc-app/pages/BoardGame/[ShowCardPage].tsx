@@ -10,6 +10,8 @@ import selectByIdBoardGame from '@/api/BoardGame/selectByIdBoardGame';
 import BoxBoardGamePage from '../BoxBoardGame/[BoxBoardGame]';
 import { fetchImage } from '@/components/fetchImage';
 
+import SearchCard from '@/components/searchCard';
+
 interface Card {
     id_card: number,
     title_card: string,
@@ -100,18 +102,15 @@ export default function ShowCardPage() {
         }
     }, [id_boardgame_from_path]);
 
-    console.log(boardGame, "boardgame");
-    console.log(cards , 'cards')
-
 return (
     <div className="flex flex-col items-center justify-center mx-10 mt-10 ">
-        <Search />
-        <label className='text-2xl font-bold mb-10'>{boardGame[0]?.title_game}</label>
+        <SearchCard id_card={id_boardgame_from_path}/>
+        <label className='text-2xl font-bold mb-10 mt-14'>{boardGame[0]?.title_game}</label>
         <Link href={`/BoxBoardGame/${id_boardgame_from_path}`}>
             <Image src={fetchImage(boardGame[0]?.path_image_boardgame)} alt="Werewolf" width={200} />
         </Link>
 
-        <h1 className="mt-10 font-bold text-[20px]">การ์ดเกม {boardGame[0]?.title_game.split(' (')[0]}</h1>
+        <h1 className="mt-10 font-semibold text-[24px] underline">การ์ดเกม</h1>
         <div className="mb-24 mt-4 grid grid-cols-3 gap-4">
             {Array.isArray(cards) ? cards.map((card) => (
                 <div key={card.id_card}>

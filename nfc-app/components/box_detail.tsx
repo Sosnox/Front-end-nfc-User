@@ -1,6 +1,7 @@
 import { MdAccessTime } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
 import { PiApplePodcastsLogoBold } from "react-icons/pi";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 
 interface Data {
@@ -24,8 +25,8 @@ function BoxDetail({ title_game,
                     }: Data) {
 
     return (
-        <div className="flex flex-col pt-1 absolute left-[120px]">
-            <label className="text-[20px] font-bold">{title_game}</label>
+        <div className="grid grid-row-3 ml-2 ">
+            <div className="text-[20px] font-semibold break-all ml-2">{title_game}</div>
             <div className="flex flex-col text-[15px] ">
                 <label className="flex">
                     <MdAccessTime size={23} />
@@ -42,6 +43,7 @@ function BoxDetail({ title_game,
                     <span className="ml-2">{age_recommend} ปี</span>
                 </label>
             </div>
+   
 
         </div>
     );
