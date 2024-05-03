@@ -39,7 +39,6 @@ return (
           width={300}
           height={280}
         />
-        <label>{data.title_card}</label>
       </div>
   </div>
 );

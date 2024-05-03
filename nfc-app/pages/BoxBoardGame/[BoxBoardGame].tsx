@@ -50,7 +50,7 @@ export default function BoxBoardGamePage() {
 
 
     return (
-        <div className="p-10 h-full ">
+        <div className="p-10 h-full">
             <div className='absolute left-5 back-button'>
                 <button onClick={goBack}> <MdOutlineArrowBackIos className="text-left" size={40} /> </button>
             </div>
@@ -98,7 +98,7 @@ export default function BoxBoardGamePage() {
                     </div>
 
                     <div className='text-[24px] flex justify-center mt-[30px] font-semibold'>เนื้อหา </div>
-                    <div className=' break-words indent-[10px]'>
+                    <div className=' break-words indent-[10px] mb-[200px]'>
                         {boardGame.detail_game}
                     </div>
 
