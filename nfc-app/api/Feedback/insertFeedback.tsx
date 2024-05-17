@@ -1,5 +1,5 @@
 
-// const endpoint = 'https://api.dlst.online/post_feedback';
+
 const endpoint = process.env.NEXT_PUBLIC_ENDPOINT + '/post_feedback/';
 
 const sendDataToFastAPI = async (data: any): Promise<unknown> => {
