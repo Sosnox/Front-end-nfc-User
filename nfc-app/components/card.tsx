@@ -10,7 +10,7 @@ export default function CardGamePage({ data }: { data: any }) {
   return (
     <div className="flex flex-col items-center mx-14 mb-4">
       <div className='absolute left-5 back-button'>
-        <button onClick={goBack}><MdOutlineArrowBackIos className="text-left" size={40} /> </button>
+        <button onClick={goBack}><MdOutlineArrowBackIos className="w-[50px] h-[50px]" size={40} /> </button>
       </div>
       <button onClick={goBack}>
         <div className='text-2xl text-left mb-4'>

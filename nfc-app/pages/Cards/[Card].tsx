@@ -46,7 +46,9 @@ export default function CardPage() {
   return (
     <div className="flex flex-col p-12 ">
       <CardGamePage data={card} />
-      <div className=''><DetailCard data={card} /></div>
+      <div className='mb-[100px]'>
+        <DetailCard data={card} />
+      </div>
     </div>
   );
 }
