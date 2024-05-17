@@ -5,11 +5,11 @@ import AddGameCard from '@/components/addgame_menu';
 export default function HomePage() {
     return (
         <div>
-            <AddGameTopic></AddGameTopic>
+            <AddGameTopic/>
             <div className='flex w-screen justify-center text-xl font-medium mb-7'>
                 <h1>บอร์ดเกมอื่น ๆ</h1>
             </div>
-            <AddGameCard></AddGameCard>
+            <AddGameCard/>
         </div>
     );
     }
