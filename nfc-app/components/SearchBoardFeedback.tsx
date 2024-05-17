@@ -10,7 +10,7 @@ export const SearchBoardFeedback = ({ handleChange }: any) => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [results, setResults] = useState<CardData>({});
     const [isOpen, setIsOpen] = useState<boolean>(true); // State to track if the dropdown is open
-    const [placeholder, setPlaceholder] = useState<string>('Type to Search Game . . .');
+    const [placeholder, setPlaceholder] = useState<string>('บอร์ดเกมที่เลือก');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -46,12 +46,12 @@ export const SearchBoardFeedback = ({ handleChange }: any) => {
         <div className='relative'>
             <Input
                 type="text"
-                label="Search Game"
+                label="ค้นหาบอร์ดเกม"
                 size='lg'
                 labelPlacement="outside"
                 variant="bordered"
                 placeholder={placeholder}
-                className="rounded-xl w-[320px] border-black p-4 h-12"
+                className="rounded-xl w-[320px] h-12"
                 onChange={handleInputChange}
                 value={searchTerm}
             />

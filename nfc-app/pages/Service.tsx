@@ -5,13 +5,12 @@ import Link from 'next/link';
 
 export default function ServicePage() {
     return (
-        <div className="flex flex-col items-center  p-12 w-full">
+        <div className="flex flex-col items-center p-12 w-full">
 
             <label className='text-2xl font-bold pb-5'>บริการอื่นๆ</label>
-
             <div className='flex flex-col  w-full h-3/4 justify-around'>
                 <Link href={'./BoardGame'}>
-                    <div className='flex flex-col items-center bg-[#0160DD] w-full py-12 rounded-xl mb-28'>
+                    <div className='flex flex-col items-center bg-[#0160DD] w-full py-12 rounded-xl mb-10'>
                         <svg width="77" height="76" viewBox="0 0 77 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 0H77V76H0V0ZM71.0769 35.0769V5.84615H41.4615V35.0769H71.0769ZM35.5385 5.84615H5.92308V35.0769H35.5385V5.84615ZM5.92308 40.9231V70.1538H35.5385V40.9231H5.92308ZM41.4615 70.1538H71.0769V40.9231H41.4615V70.1538Z" fill="white" />
                         </svg>

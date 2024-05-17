@@ -79,9 +79,9 @@ export default function FeedbackPage() {
             <div className='flex flex-col gap-4 pb-5 w-full justify-center items-center'>
                 <Input
                     type="text"
-                    label="Name"
+                    label="ชื่อ"
                     variant="bordered"
-                    placeholder='Name'
+                    placeholder='โซดี้'
                     onChange={(e) => setValueInput(prevState => ({
                         ...prevState,
                         name_report: e.target.value,
@@ -90,7 +90,7 @@ export default function FeedbackPage() {
                 />
                 <Input
                     type="text"
-                    label="Comment"
+                    label="ความคิดเห็นเพิ่มเติม"
                     variant="bordered"
                     onChange={(e) => setValueInput(prevState => ({
                         ...prevState,
@@ -100,7 +100,7 @@ export default function FeedbackPage() {
                     className="max-w-xs"
                 />
                     <div className='flex flex-col w-full pl-3 sm:items-center items-start'>
-                        <label>Share</label>
+                        <label>ความพึงพอใจ</label>
                         <FiveStar rating={(rating) => setValueInput(prevState => ({
                             ...prevState,
                             rating: rating,

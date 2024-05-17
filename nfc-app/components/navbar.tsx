@@ -1,15 +1,14 @@
 import logo from "../styles/Img-icon/iconnavv.png";
 import Image from 'next/image';
-import Link from 'next/link';
 import Text_logo from "../styles/Img-icon/TextNavv.svg";
 import Text_logo2 from "../styles/Img-icon/TextNav2.svg";
-
+import Link from "next/link";
 
 function Navbar() {
     return (
         <nav className="navbar z-50">
             <div>
-                <div className="tranform translate-x-[1px] translate-y-[-15px] nav-img flex">
+                <div className="tranform translate-x-[1px]  nav-img flex">
                     <Link href="/" className=" flex flex-row">
                             <Image src={logo} alt="logo" width={100} />
                         <div className="translate translate-y-[25px] navt-text">

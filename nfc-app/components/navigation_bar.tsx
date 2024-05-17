@@ -1,12 +1,8 @@
 import Image from 'next/image'
-import Link from 'next/link'
-
-
-
 import Card from "../styles/Img-icon/Home.svg";
 import Home from "../styles/Img-icon/Card.svg";
 import Service from "../styles/Img-icon/Service.svg";
-import PopupIcon from '@/components/popup_icon'
+import Link from 'next/link';
 
 export default function NavigationBar() {
     return (
@@ -35,7 +31,7 @@ export default function NavigationBar() {
         <Link href={'/Service'}>
                 <Image src={Service} alt="home-navi"/>
                 <div className='translate translate-x-[2px]'>
-                    <label htmlFor="icon-home" className="text-xs icon-navi">บริการ</label>   
+                    <label htmlFor="icon-home" className="text-xs icon-navi">บริการ</label>  
                 </div>
             </Link>
         </div>
