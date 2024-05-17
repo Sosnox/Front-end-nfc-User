@@ -15,7 +15,7 @@ export const SearchBoardFeedback = ({ handleChange }: any) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://api.dlst.online/searchGame/`);
+                const response = await fetch(`https://api.dlst.online/searchGame`);
                 if (response.ok) {
                     const data: CardData = await response.json();
                     setResults(data);
